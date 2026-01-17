@@ -6,14 +6,25 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
-  if (isSpellPrepared) {
-    return true;
-  } else if (hasScroll) {
+  if (isSpellPrepared || hasScroll) {
     return true;
   } else {
     return false;
   }
 }
+
+// // Only 'Happy Testing' :-)
+// const userIsSpellPrepared = Number(
+//   prompt(`Is your spell prepared?
+//     [1] Yes
+//     [0] No`),
+// );
+// const userHasScroll = Number(
+//   prompt(`Do you have a scroll with the spell?
+//     [1] Yes
+//     [0] No`),
+// );
+// console.log(canCastSpell(userIsSpellPrepared, userHasScroll));
 
 /**
  * A creature is hidden from an observer if it is actively hiding
@@ -23,9 +34,25 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  * @returns {boolean} whether the creature is hidden from the observer
  */
 function isHidden(hiding, aware) {
-  // TODO
+  if (hiding || !aware) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
+// // Only 'Happy Testing' :-)
+// const userHiding = Number(
+//   prompt(`Is the creature actively hiding?
+//     [1] Yes
+//     [0] No`),
+// );
+// const userAware = Number(
+//   prompt(`Is the observer aware of the creature?
+//     [1] Yes
+//     [0] No`),
+// );
+// console.log(isHidden(userHiding, userAware));
 /**
  * A strike hits if the attack value is greater than or equal
  * to the target's armor class (AC).
