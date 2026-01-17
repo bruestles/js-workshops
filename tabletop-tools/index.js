@@ -6,7 +6,13 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
-  // TODO
+  if (isSpellPrepared) {
+    return true;
+  } else if (hasScroll) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
