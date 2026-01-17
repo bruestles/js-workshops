@@ -68,7 +68,7 @@ function doesStrikeHit(attack, ac) {
   }
 }
 
-// // Only 'Happy Testing' :-)
+// Only 'Happy Testing' :-)
 // const userAttack = Number(
 //   prompt(`What is the attack value? Provide a number:`),
 // );
@@ -85,8 +85,15 @@ function doesStrikeHit(attack, ac) {
  * @returns {boolean} whether the strike is a critical hit
  */
 function doesStrikeCrit(attack, ac) {
-  // TODO
+  if (attack > ac + 10) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+// // Using responses from previous questions
+// console.log(doesStrikeCrit(userAttack, userAc));
 
 /**
  * A creature can restore hit points (HP) by healing,
@@ -97,8 +104,20 @@ function doesStrikeCrit(attack, ac) {
  * @returns {number} total hit points after healing
  */
 function heal(maxHp, currentHp, healAmount) {
-  // TODO
+  HealedHP = currentHp - healAmount;
+  if (HealedHP > maxHp) {
+    return maxHp;
+  } else {
+    return HealedHP;
+  }
 }
+
+const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
+const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
+const userHealAmount = prompt(
+  `How much has the creature healed? Provide a number.`,
+);
+console.log(`Final HP:`, heal(userMaxHP, userCurrentHP, userHealAmount));
 
 /**
  * When a character uses a skill they have proficiency in,
