@@ -61,8 +61,21 @@ function isHidden(hiding, aware) {
  * @returns {boolean} whether the strike hits
  */
 function doesStrikeHit(attack, ac) {
-  // TODO
+  if (attack >= ac) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+// // Only 'Happy Testing' :-)
+// const userAttack = Number(
+//   prompt(`What is the attack value? Provide a number:`),
+// );
+// const userAc = Number(
+//   prompt(`What is the target's armor class? Provide a number:`),
+// );
+// console.log(doesStrikeHit(userAttack, userAc));
 
 /**
  * A strike is a critical hit if the attack value is at least
