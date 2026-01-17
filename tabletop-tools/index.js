@@ -53,6 +53,7 @@ function isHidden(hiding, aware) {
 //     [0] No`),
 // );
 // console.log(isHidden(userHiding, userAware));
+
 /**
  * A strike hits if the attack value is greater than or equal
  * to the target's armor class (AC).
@@ -149,13 +150,13 @@ function getProficiencyBonus(level, rank) {
   }
 }
 // Happy Testing only :-)
-const userRank =
-  prompt(`What is the character's proficiency rank? Enter one of the following:
-  untrained, trained, expert, master, or legendary`).toLowerCase();
-const userLevel = Number(
-  prompt(`What is the level of the character? Enter a number:`),
-);
-console.log(getProficiencyBonus(userLevel, userRank));
+// const userRank =
+//   prompt(`What is the character's proficiency rank? Enter one of the following:
+//   untrained, trained, expert, master, or legendary`).toLowerCase();
+// const userLevel = Number(
+//   prompt(`What is the level of the character? Enter a number:`),
+// );
+// console.log(getProficiencyBonus(userLevel, userRank));
 
 /**
  * A creature can get a bonus to its armor class (AC) by taking cover.
@@ -168,8 +169,27 @@ console.log(getProficiencyBonus(userLevel, userRank));
  * @returns {number} the cover bonus to AC
  */
 function getCoverBonus(behindObstacle, takingCover) {
-  // TODO
+  if (takingCover) {
+    return 4;
+  } else if (behindObstacle) {
+    return 2;
+  } else {
+    return 0;
+  }
 }
+
+// Only 'Happy Testing' :-)
+const userBehindObstacle = Number(
+  prompt(`Is the creature behind an obstacle?
+    [1] Yes
+    [0] No`),
+);
+const userTakingCover = Number(
+  prompt(`Is the creature actively taking cover?
+    [1] Yes
+    [0] No`),
+);
+console.log(getCoverBonus(userBehindObstacle, userTakingCover));
 
 /**
  * A creature's current hit points (HP) is reduced by taking damage.
