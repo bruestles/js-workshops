@@ -112,12 +112,12 @@ function heal(maxHp, currentHp, healAmount) {
   }
 }
 
-const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
-const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
-const userHealAmount = prompt(
-  `How much has the creature healed? Provide a number.`,
-);
-console.log(`Final HP:`, heal(userMaxHP, userCurrentHP, userHealAmount));
+// const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
+// const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
+// const userHealAmount = prompt(
+//   `How much has the creature healed? Provide a number.`,
+// );
+// console.log(`Final HP:`, heal(userMaxHP, userCurrentHP, userHealAmount));
 
 /**
  * When a character uses a skill they have proficiency in,
@@ -136,8 +136,26 @@ console.log(`Final HP:`, heal(userMaxHP, userCurrentHP, userHealAmount));
  * @returns {number} the character's proficiency bonus
  */
 function getProficiencyBonus(level, rank) {
-  // TODO
+  if (rank === "untrained") {
+    return 0;
+  } else if (rank === "trained") {
+    return level + 2;
+  } else if (rank === "expert") {
+    return level + 4;
+  } else if (rank === "master") {
+    return level + 6;
+  } else if (rank === "legendary") {
+    return level + 8;
+  }
 }
+// Happy Testing only :-)
+const userRank =
+  prompt(`What is the character's proficiency rank? Enter one of the following:
+  untrained, trained, expert, master, or legendary`).toLowerCase();
+const userLevel = Number(
+  prompt(`What is the level of the character? Enter a number:`),
+);
+console.log(getProficiencyBonus(userLevel, userRank));
 
 /**
  * A creature can get a bonus to its armor class (AC) by taking cover.
