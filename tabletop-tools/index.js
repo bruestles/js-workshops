@@ -113,8 +113,8 @@ function heal(maxHp, currentHp, healAmount) {
   }
 }
 
-const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
-const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
+// const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
+// const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
 // const userHealAmount = prompt(
 //   `How much has the creature healed? Provide a number.`,
 // );
@@ -228,8 +228,25 @@ function getCoverBonus(behindObstacle, takingCover) {
  * @returns {boolean} whether the creature can see
  */
 function canSee(light, vision) {
-  // TODO
+  if (
+    light === "bright" ||
+    (vision === "low-light" && light === "dim") ||
+    vision === "dark"
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+// // // Only 'Happy Testing' :-)
+// const userLight =
+//   prompt(`What is the light condition? Enter one of the following:
+//   bright, dim, or dark`);
+// const userVision =
+//   prompt(`What is the creatures vision type? Enter one of the following:
+//   average, low-light, or dark`);
+// console.log(canSee(userLight, userVision));
 
 /**
  * A strike deals damage if it hits, unless the strike is a critical hit,
