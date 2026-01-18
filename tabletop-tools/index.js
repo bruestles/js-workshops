@@ -113,8 +113,8 @@ function heal(maxHp, currentHp, healAmount) {
   }
 }
 
-// const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
-// const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
+const userMaxHP = prompt(`What is the maximum HP? Provide a number.`);
+const userCurrentHP = prompt(`What is the current HP? Provide a number.`);
 // const userHealAmount = prompt(
 //   `How much has the creature healed? Provide a number.`,
 // );
@@ -178,18 +178,18 @@ function getCoverBonus(behindObstacle, takingCover) {
   }
 }
 
-// Only 'Happy Testing' :-)
-const userBehindObstacle = Number(
-  prompt(`Is the creature behind an obstacle?
-    [1] Yes
-    [0] No`),
-);
-const userTakingCover = Number(
-  prompt(`Is the creature actively taking cover?
-    [1] Yes
-    [0] No`),
-);
-console.log(getCoverBonus(userBehindObstacle, userTakingCover));
+// // Only 'Happy Testing' :-)
+// const userBehindObstacle = Number(
+//   prompt(`Is the creature behind an obstacle?
+//     [1] Yes
+//     [0] No`),
+// );
+// const userTakingCover = Number(
+//   prompt(`Is the creature actively taking cover?
+//     [1] Yes
+//     [0] No`),
+// );
+// console.log(getCoverBonus(userBehindObstacle, userTakingCover));
 
 /**
  * A creature's current hit points (HP) is reduced by taking damage.
@@ -203,9 +203,21 @@ console.log(getCoverBonus(userBehindObstacle, userTakingCover));
  * @returns {number} 0 if the creature's HP drops to 0 or below
  * @returns {number} the creature's remaining HP after taking damage
  */
-function getRemainingHp(maxHp, currentHp, damage) {
-  // TODO
-}
+// function getRemainingHp(maxHp, currentHp, damage) {
+//   currentHp -= damage;
+//   if (damage >= 2 * maxHp) {
+//     return -1;
+//   } else if (currentHp <= 0) {
+//     return 0;
+//   } else {
+//     return currentHp;
+//   }
+// }
+
+// // Only 'Happy Testing' :-)
+// // Using responses from earlier questions
+// const userDamage = Number(prompt(`How much damage was taken? Enter a number:`));
+// console.log(getRemainingHp(userMaxHP, userCurrentHP, userDamage));
 
 /**
  * All creatures can see in bright light.
