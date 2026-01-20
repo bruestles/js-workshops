@@ -239,6 +239,8 @@ function canSee(light, vision) {
   }
 }
 
+/* another possibility: if (light === 'dim' && (vision === 'low-light' || vision === 'dark')) */
+
 // // // Only 'Happy Testing' :-)
 // const userLight =
 //   prompt(`What is the light condition? Enter one of the following:
