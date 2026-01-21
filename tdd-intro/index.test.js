@@ -124,7 +124,7 @@ describe("isMultiple35", function () {
   });
 });
 
-describe.only("shareLastDigit", function () {
+describe("shareLastDigit", function () {
   it("is true when both are one-digit and equal", function () {
     expect(shareLastDigit(7, 7)).toBe(true);
   });
@@ -228,7 +228,7 @@ describe("makeSLS", function () {
   });
 });
 
-describe("canEnterClub", function () {
+describe.only("canEnterClub", function () {
   it("returns 2 when you are very stylish", function () {
     expect(canEnterClub(9, 5)).toBe(2);
   });
