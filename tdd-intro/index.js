@@ -12,7 +12,7 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */
+  return num1 === num2 ? 2 * (num1 + num2) : num1 + num2;
 }
 
 /**
@@ -28,7 +28,7 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  /* TODO */
+  return num1 === 10 || num2 === 10 || num1 + num2 === 10;
 }
 
 /**
@@ -46,7 +46,7 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
-  /* TODO */
+  return distance >= Math.abs(100 - n);
 }
 
 /**
@@ -63,7 +63,7 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
-  /* TODO */
+  return n % 3 === 0 || n % 5 === 0;
 }
 
 /**
@@ -81,7 +81,7 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
-  /* TODO */
+  return num1 % 10 === num2 % 10;
 }
 
 /**

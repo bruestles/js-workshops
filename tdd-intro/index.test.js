@@ -124,7 +124,7 @@ describe("isMultiple35", function () {
   });
 });
 
-describe("shareLastDigit", function () {
+describe.only("shareLastDigit", function () {
   it("is true when both are one-digit and equal", function () {
     expect(shareLastDigit(7, 7)).toBe(true);
   });
