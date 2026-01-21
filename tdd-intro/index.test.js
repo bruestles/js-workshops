@@ -228,7 +228,7 @@ describe("makeSLS", function () {
   });
 });
 
-describe.only("canEnterClub", function () {
+describe("canEnterClub", function () {
   it("returns 2 when you are very stylish", function () {
     expect(canEnterClub(9, 5)).toBe(2);
   });
